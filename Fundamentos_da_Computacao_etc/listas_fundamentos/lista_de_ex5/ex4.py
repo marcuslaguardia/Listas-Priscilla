@@ -1,15 +1,21 @@
-def conta_espaco_vogal(cadeia):
-    cont_esp = 0
+def ler_string():
+    string = input("Insira uma string: ")
+    return string
+
+def contar_espaco_vogal(string):
+    cont_espaco = 0
     cont_vogal = 0
-    for i in range(len(cadeia)):
-        if cadeia[i].upper() in ["A", "E", "I", "O", "U"]:
+    for i in range(len(string)):
+        if string[i].lower() == "a" or \
+        string[i].lower() == 'e' or \
+        string[i].lower() == 'i' or \
+        string[i].lower() == 'o' or \
+        string[i].lower() == 'u':
             cont_vogal += 1
-        elif cadeia[i] == " ":
-            cont_esp += 1
+        elif string[i] == " ":
+            cont_espaco += 1
 
-    print(f"Na string '{cadeia}', as vogais 'a', 'e', 'i', 'o' e 'u' apareceram {cont_vogal} vezes.")
-    print(f"Além disso, espaços em branco apareceram {cont_esp} vezes.")
+    print(f"Na string {string}, há {cont_vogal} vogal(is) e {cont_espaco} espaço(s) branco(s).")
 
-
-cadeia = input("Insira uma cadeia: ")
-conta_espaco_vogal(cadeia)
+string = ler_string()
+resultado = contar_espaco_vogal(string)
